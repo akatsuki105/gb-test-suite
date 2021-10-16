@@ -1,4 +1,4 @@
-# GameBoyのCPUによるメモリへのアクセス時間のテスト
+# GameBoyのCPUによるメモリアクセス時間のテスト
 
 このROMは、スタックやプログラムカウンタへのアクセスを除く、CPU命令によるメモリの読み書きのタイミングをテストします。
 
@@ -36,7 +36,6 @@ read-modify-writeテストでは、失敗した命令を以下のようにリス
 
 [cpu_instrs](../cpu_instrs/README.ja.md#multi-rom)参照
 
-
 ## エラーコード
 
 [cpu_instrs](../cpu_instrs/README.ja.md#エラーコード)参照
@@ -53,8 +52,4 @@ read-modify-writeテストでは、失敗した命令を以下のようにリス
 ## Internal framework operation
 
 [cpu_instrs](../cpu_instrs/README.ja.md#internal-framework-operation)参照
-
-## Credits
-
-Shay Green <gblargg@gmail.com>
 

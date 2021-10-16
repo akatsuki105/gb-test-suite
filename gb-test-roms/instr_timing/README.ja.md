@@ -84,7 +84,3 @@ The timing itself is done by first synchronizing to the timer via a loop, execut
 ## Internal framework operation
 
 [cpu_instrs](../cpu_instrs/README.ja.md#internal-framework-operation)参照
-
-## Credits
-
-Shay Green <gblargg@gmail.com>
