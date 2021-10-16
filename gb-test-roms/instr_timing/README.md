@@ -1,5 +1,7 @@
 # Game Boy CPU Instruction Timing Test
 
+[Japanese, 日本語はこちら](./README.ja.md)
+
 This ROM tests the timings of all CPU instructions except HALT, STOP,
 and the 11 illegal opcodes. For conditional instructions, it tests taken
 and not taken timings. This test requires proper timer operation (TAC,

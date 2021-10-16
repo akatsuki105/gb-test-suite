@@ -1,5 +1,7 @@
 # Game Boy CPU Instruction Behavior Test
 
+[Japanese, 日本語はこちら](./README.ja.md)
+
 This ROM tests the behavior of all CPU instructions except STOP and the
 11 illegal opcodes. The tests are fairly thorough, running instructions
 with boundary data and verifying both the result and that other

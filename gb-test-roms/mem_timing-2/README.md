@@ -1,5 +1,7 @@
 # Game Boy CPU Memory Access Timing Test
 
+[Japanese, 日本語はこちら](./README.ja.md)
+
 These tests verify the timing of memory reads and writes made by
 instructions, except stack and program counter accesses. These tests
 require correct instruction timing and proper timer operation (TAC,
