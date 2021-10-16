@@ -11,7 +11,7 @@ minute to complete.
 Failed instructions are listed as
 
 ```
-	[CB] opcode
+[CB] opcode
 ```
 
 Some errors cannot of course be diagnosed properly, since the test

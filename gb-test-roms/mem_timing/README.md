@@ -1,5 +1,5 @@
-Game Boy CPU Memory Access Timing Test
---------------------------------------
+# Game Boy CPU Memory Access Timing Test
+
 This ROM tests the timing of memory reads and writes made by
 instructions, except stack and program counter accesses. These tests
 require correct instruction timing and proper timer operation (TAC,
@@ -7,11 +7,15 @@ TIMA, TMA).
 
 The read and write tests list failing instructions as
 
-	[CB] opcode:tested-correct
+```
+[CB] opcode:tested-correct
+```
 
 The read-modify-write test lists failing instructions as 
 
-	[CB] opcode:tested read/tested write-correct read/correct write
+```
+[CB] opcode:tested read/tested write-correct read/correct write
+```
 
 The values after the opcode refer to which instruction cycle the access
 occurs on, with 1 being the first. If a time couldn't be determined due
@@ -23,8 +27,8 @@ write back, the CPU reads on the next-to-last cycle, and writes on the
 last cycle.
 
 
-Internal operation
-------------------
+## Internal operation
+
 The tests have the timer increment TIMA every 64 cycles, synchronize
 with this, delay a variable amount, then have the instruction under test
 access the timer. By varying the delay in one-cycle increments, the
@@ -33,8 +37,8 @@ after a TIMA increment. By then examining the registers and value in
 TIMA, it can be determined which occurred.
 
 
-Multi-ROM
----------
+## Multi-ROM
+
 In the main directory is a single ROM which runs all the tests. It
 prints a test's number, runs the test, then "ok" if it passes, otherwise
 a failure code. Once all tests have completed it either reports that all
@@ -53,8 +57,8 @@ is to take a screenshot after all tests have run, or even just a
 checksum of one, and compare this with a previous run.
 
 
-Failure codes
--------------
+## Failure codes
+
 Failed tests may print a failure code, and also short description of the
 problem. For more information about a failure code, look in the
 corresponding source file in source/; the point in the code where
@@ -65,8 +69,8 @@ will be printed.
 Note that once a sub-test fails, no further tests for that file are run.
 
 
-Console output
---------------
+## Console output
+
 Information is printed on screen in a way that needs only minimum LCD
 support, and won't hang if LCD output isn't supported at all.
 Specifically, while polling LY to wait for vblank, it will time out if
@@ -79,8 +83,8 @@ writing the character to SB, then writing $81 to SC. This is useful for
 tests which print lots of information that scrolls off screen.
 
 
-Source code
------------
+## Source code
+
 Source code is included for all tests, in source/. It can be used to
 build the individual test ROMs. Code for the multi test isn't included
 due to the complexity of putting everything together.
@@ -88,14 +92,16 @@ due to the complexity of putting everything together.
 Code is written for the wla-dx assembler. To assemble a particular test,
 execute
 
-	wla -o "source_filename.s" test.o
-	wlalink linkfile test.gb
+```sh
+wla -o "source_filename.s" test.o
+wlalink linkfile test.gb
+```
 
 Test code uses a common shell framework contained in common/.
 
 
-Internal framework operation
-----------------------------
+## Internal framework operation
+
 Tests use a common framework for setting things up, reporting results,
 and ending. All files first include "shell.inc", which sets up the ROM
 header and shell code, and includes other commonly-used modules.
@@ -107,16 +113,18 @@ rewritable ROM as most do.
 
 Some macros are used to simplify common tasks:
 
-	Macro               Behavior
-	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-	wreg addr,data      Writes data to addr using LDH
-	lda  addr           Loads byte from addr into A using LDH
-	sta  addr           Stores A at addr using LDH
-	delay n             Delays n cycles, where NOP = 1 cycle
-	delay_msec n        Delays n milliseconds
-	set_test n,"Cause"  Sets failure code and optional string
+Macro | Behavior
+-- | -- 
+`wreg addr,data` 	 | Writes data to addr using LDH
+`lda  addr`          | Loads byte from addr into A using LDH
+`sta  addr`          | Stores A at addr using LDH
+`delay n`            | Delays n cycles, where NOP = 1 cycle
+`delay_msec n`       | Delays n milliseconds
+`set_test n,"Cause"` | Sets failure code and optional string
 
 Routines and macros are documented where they are defined.
 
--- 
+## Credits
+
 Shay Green <gblargg@gmail.com>
+
