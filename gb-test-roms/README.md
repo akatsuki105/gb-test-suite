@@ -4,4 +4,4 @@
 
 ## Credits
 
-All markdown files is credited to Shay Green <gblargg@gmail.com>
+All files are credited to Shay Green <gblargg@gmail.com>
