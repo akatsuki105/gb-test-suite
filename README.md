@@ -10,3 +10,13 @@
 
 [Gekkio/mooneye-gb](https://github.com/Gekkio/mooneye-gb/tree/2d52008228557f9e713545e702d5b7aa233d09bb)
 
+## Palettes
+
+**BGB v1.5.7**
+
+```
+Color Idx 0: 0xFFFFFF
+Color Idx 1: 0xB0B0B0
+Color Idx 2: 0x686868
+Color Idx 3: 0x000000
+```
