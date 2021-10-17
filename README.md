@@ -20,3 +20,12 @@ Color Idx 1: 0xB0B0B0
 Color Idx 2: 0x686868
 Color Idx 3: 0x000000
 ```
+
+**mGBA v0.9.2**
+
+```
+Color Idx 0: 0xF8F8F8
+Color Idx 1: 0xA8A8A8
+Color Idx 2: 0x505050
+Color Idx 3: 0x000000
+```
